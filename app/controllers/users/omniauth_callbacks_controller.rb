@@ -24,8 +24,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
-  def google
-    @user = User.find_oauth(:google, request.env["omniauth.auth"], current_user)
+  def google_oauth2
+    @user = User.find_oauth(:google_oauth2, request.env["omniauth.auth"], current_user)
 
     if @user.persisted?
       sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
@@ -36,4 +36,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+  def renren
+    @user = User.find_oauth(:renren, request.env["omniauth.auth"], current_user)
+
+    if @user.persisted?
+      sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
+      set_flash_message(:notice, :success, :kind => "google") if is_navigational_format?
+    else
+      session["devise.google_data"] = request.env["omniauth.auth"]
+      redirect_to new_user_registration_url
+    end
+  end
 end

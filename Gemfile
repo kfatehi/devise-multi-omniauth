@@ -16,6 +16,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-weibo-oauth2'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-renren-oauth2'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

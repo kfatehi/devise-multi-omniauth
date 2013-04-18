@@ -222,6 +222,8 @@ Devise.setup do |config|
   require "omniauth-google-oauth2"
   config.omniauth :google_oauth2, '563885100585-d9vdrse1ebgcj1s6sufl5fgbsg354a8v.apps.googleusercontent.com', 'Bj64Ln14EmiOK9V3gi__UfM3'
 
+  require "omniauth-renren-oauth2"
+  config.omniauth :renren, '4c81252f0fcf40a18716fe23bd7dba0a', '063fe3644e3f410ab096a37306705193'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

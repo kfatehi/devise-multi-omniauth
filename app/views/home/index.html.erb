@@ -4,6 +4,8 @@
 <br/>
 <%= link_to "Sign in with google", user_omniauth_authorize_path(:google_oauth2) %>
 <br/>
+<%= link_to "Sign in with renren", user_omniauth_authorize_path(:renren) %>
+<br/>
 <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 <br/>
 <%= link_to "Edit", edit_user_registration_path %>
