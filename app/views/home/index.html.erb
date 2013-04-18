@@ -1,0 +1,9 @@
+<%= link_to "Sign in with github", user_omniauth_authorize_path(:github) %>
+<br/>
+<%= link_to "Sign in with weibo", user_omniauth_authorize_path(:weibo) %>
+<br/>
+<%= link_to "Sign in with google", user_omniauth_authorize_path(:google_oauth2) %>
+<br/>
+<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+<br/>
+<%= link_to "Edit", edit_user_registration_path %>
